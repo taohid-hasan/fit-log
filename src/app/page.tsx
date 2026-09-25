@@ -1,10 +1,11 @@
 import Banner from '@/components/Banner';
-import React from 'react';
+import Fit from '@/components/Fit';
 
 const page = () => {
   return (
     <div>
       <Banner />
+      <Fit />
     </div>
   );
 };
