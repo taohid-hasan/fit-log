@@ -1,7 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Banner from '@/components/Banner';
 import { AType } from '@/components/type/page';
 
 
@@ -22,8 +21,6 @@ const workoutsPage = async () => {
 
   return (
     <>
-      <Banner />
-
       <section className="bg-[#111214] py-10">
         <div className="container mx-auto px-6">
           <div className="mb-5">
