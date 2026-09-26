@@ -1,3 +1,28 @@
+## Project name
+fit-log
+
+## Short description
+fit-log is a simple and modern gym companion designed to make workout planning easier. Users can explore a workout library, view detailed exercise information, create personalized workout plans, and save their favorite exercises for quick access.
+
+## Technologies used
+Next.js
+React
+TypeScript
+Tailwind CSS
+React Context API
+Next.js Dynamic Routing
+REST API
+Local Storage
+Git & GitHub
+
+## 6 key features of the project
+Browse a complete workout library
+Add exercises to Today's Plan
+Save workouts for later
+Remove workouts from the plan or saved list
+Sort workouts by duration, calories, or name
+Store Plan and Saved data using Local Storage
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
