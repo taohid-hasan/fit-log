@@ -4,7 +4,6 @@ import Fit from '@/components/Fit';
 const page = () => {
   return (
     <div>
-      <Banner />
       <Fit />
     </div>
   );
