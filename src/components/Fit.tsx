@@ -5,6 +5,7 @@ import { AType } from '@/components/type/page';
 import Banner from './Banner';
 
 
+
 const getWorkouts = async (): Promise<AType[]> => {
   const res = await fetch('https://api.abcz.workers.dev/api/fitlog', {
     next: { revalidate: 3600 },
