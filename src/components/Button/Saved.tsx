@@ -3,8 +3,10 @@
 import React, { useContext } from 'react';
 import { AType } from '@/components/type/page';
 import { Cardprovider } from '@/context/Cardcontext';
+import toast from 'react-hot-toast';
 
-const Saved = ({ exercise }: { exercise: AType }) => {
+const Saved = ({ exercise }: { exercise: AType }) =>
+{
   const context = useContext(Cardprovider);
 
   if (!context) return null;
@@ -14,8 +16,13 @@ const Saved = ({ exercise }: { exercise: AType }) => {
   const handleSave = () => {
     const alreadySaved = saved.some(item => item.id === exercise.id);
 
-    if (alreadySaved) return;
-    setSaved(prev => [...prev, exercise]);
+  
+      if (alreadySaved) {
+      toast('Already saved', { icon: 'ℹ️' });
+      return;
+    } 
+      setSaved(prev => [...prev, exercise]);
+      toast.success('Saved for later!');
   };
 
   return (

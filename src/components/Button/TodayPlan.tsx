@@ -3,6 +3,8 @@
 import React, { useContext } from 'react';
 import { AType } from '@/components/type/page';
 import { Cardprovider } from '@/context/Cardcontext';
+import toast from 'react-hot-toast';
+
 
 const TodayPlan = ({ exercise }: { exercise: AType }) => {
   const context = useContext(Cardprovider);
@@ -14,8 +16,12 @@ const TodayPlan = ({ exercise }: { exercise: AType }) => {
   const handleAddToPlan = () => {
     const alreadyAdded = todayPlan.some(item => item.id === exercise.id);
 
-    if (alreadyAdded) return;
+    if (alreadyAdded) {
+     toast('Already in your plan', { icon: 'ℹ️' });
+     return;
+   } 
     setTodayPlan(prev => [...prev, exercise]);
+    toast.success("Added to today's plan!");
   };
 
   return (

@@ -4,6 +4,7 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Cardcontext from '@/context/Cardcontext';
+import { Toaster } from 'react-hot-toast';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -29,9 +30,26 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
     >
       <body className="min-h-full flex flex-col">
         <Cardcontext>
-        <Navbar />
-        {children}
-        <Footer />
+          <Navbar />
+          {children}
+          <Footer />
+          <Toaster
+            position="top-right"
+            toastOptions={{
+              style: {
+                background: '#1F2937',
+                color: '#fff',
+                border: '1px solid #383d46',
+                fontSize: '13px',
+              },
+              success: {
+                iconTheme: {
+                  primary: '#d9ff00',
+                  secondary: '#1F2937',
+                },
+              },
+            }}
+          />
         </Cardcontext>
       </body>
     </html>
