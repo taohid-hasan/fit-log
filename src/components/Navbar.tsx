@@ -5,8 +5,10 @@ import { Cardprovider } from '@/context/Cardcontext';
 import Image from 'next/image';
 import Link from 'next/link';
 import ImageLogo from '@/assist/logo.png';
+import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
+  const pathname = usePathname();
   const context = useContext(Cardprovider);
   const planCount = context?.todayPlan.length ?? 0;
   const savedCount = context?.saved.length ?? 0;
@@ -29,13 +31,30 @@ const Navbar = () => {
           </div>
 
           {/* Navigation */}
-          <ul className="flex items-center gap-6">
-            <li className="text-[12px] text-[#9CA3AF] leading-3 font-medium">
-              <Link href={links.workout}>Workouts</Link>
+          <ul className="flex items-center gap-2">
+            <li>
+              <Link
+                href={links.workout}
+                className={`text-[13px] font-medium px-4 py-1.5 rounded-full transition-colors ${
+                  pathname === links.workout
+                    ? 'bg-[#1A2312] text-[#C2F800]'
+                    : 'text-[#9CA3AF] hover:text-white'
+                }`}
+              >
+                Workouts
+              </Link>
             </li>
-
-            <li className="text-[12px] text-[#9CA3AF] leading-3 font-medium">
-              <Link href={links.myplan}>My Plan</Link>
+            <li>
+              <Link
+                href={links.myplan}
+                className={`text-[13px] font-medium px-4 py-1.5 rounded-full transition-colors ${
+                  pathname === links.myplan
+                    ? 'bg-[#1A2312] text-[#C2F800]'
+                    : 'text-[#9CA3AF] hover:text-white'
+                }`}
+              >
+                My Plan
+              </Link>
             </li>
           </ul>
 
