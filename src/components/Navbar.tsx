@@ -16,9 +16,9 @@ const Navbar = () => {
     myplan: '/myplan',
   };
   return (
-    <div>
+    <div className="sticky top-0 z-50 bg-[#0C0D10]/80 backdrop-blur-md border-b border-white/15">
       <section className="container mx-auto">
-        <nav className="flex justify-between items-center py-5 px-1">
+        <nav className="flex justify-between items-center py-4 px-1">
           {/* Logo */}
           <div className="flex items-center gap-2.5">
             <Link href="/">
