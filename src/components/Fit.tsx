@@ -2,12 +2,23 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { AType } from '@/components/type/page';
+import Banner from './Banner';
 
 
 const getWorkouts = async (): Promise<AType[]> => {
-  const res = await fetch('https://api.abcz.workers.dev/api/fitlog');
+  const res = await fetch('https://api.abcz.workers.dev/api/fitlog', {
+    next: { revalidate: 3600 },
+  });
 
   if (!res.ok) {
+    console.error('Status:', res.status, res.statusText);
+    const body = await res.text().catch(() => '');
+    console.error('Body:', body);
+
+    // if (res.status === 429) {
+    //   return [];
+    // }
+
     throw new Error('Failed to fetch workouts');
   }
 
@@ -21,6 +32,7 @@ const workoutsPage = async () => {
 
   return (
     <>
+      <Banner />
       <section className="bg-[#111214] py-10">
         <div className="container mx-auto px-6">
           <div className="mb-5">
