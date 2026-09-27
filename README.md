@@ -1,4 +1,5 @@
 ## Project name
+<<<<<<< HEAD
 - fit-log
 
 ## Short description
