@@ -1,5 +1,7 @@
+## Live link
+- https://fit-log-snowy.vercel.app/
+
 ## Project name
-<<<<<<< HEAD
 - fit-log
 
 ## Short description
